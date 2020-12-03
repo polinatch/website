@@ -4,6 +4,7 @@ pipeline {
 	stage('Deploy') {
 		steps {
 			echo "Deploy"
+			sh "ls -ltr /var/lib/jenkins/workspace/website/index.html"
 			sh "cp -n /var/lib/jenkins/workspace/website/index.html /var/www/html/"
 			sh "sudo systemctl start httpd"
 
