@@ -5,7 +5,7 @@ pipeline {
 		steps {
 			echo "Deploy"
 			sh "ls -ltr /var/lib/jenkins/workspace/website/index.html"
-			sh "cp -rp /var/lib/jenkins/workspace/website/index.html /var/www/html/index.html"
+			sh "cp -rpn /var/lib/jenkins/workspace/website/index.html /var/www/html/index.html"
 			sh "ls -ltr /var/www/html/"
 			sh "ps -ef|grep httpd"
 			sh "sudo systemctl restart httpd"
