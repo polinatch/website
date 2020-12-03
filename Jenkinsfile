@@ -17,7 +17,7 @@ pipeline {
                 	script {
     			try {
 			    // Fails with non-zero exit if dir1 does not exist
-    				def out = sh(script:'curl localhost |grep Hello', returnStdout:true).trim()
+    				def out = sh(script:'curl localhost |grep kuku', returnStdout:true).trim()
 			} catch (Exception ex) {
     			println("Error in output")
 }
