@@ -14,6 +14,13 @@ pipeline {
 	stage('Test') {
                 steps {
                         echo "Test"
+             		def stderrfile = 'stderr.out'
+			try {
+    				def output = sh(script:"curl localhost |grep Hello 2>${stderrfile}", returnStdout:true).trim()
+			} catch (Exception ex) {
+    			def errmsg = readFile(stderrfile)
+    			println("Error in output")
+			}
                 }
         }
      }
