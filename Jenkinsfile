@@ -7,9 +7,7 @@ pipeline {
 			sh "ls -ltr /var/lib/jenkins/workspace/website/index.html"
 			sh "sudo cp -rpn /var/lib/jenkins/workspace/website/index.html /var/www/html/index.html"
 			sh "ls -ltr /var/www/html/"
-			sh "ps -ef|grep httpd"
 			sh "sudo systemctl restart httpd"
-			sh "ps -ef|grep httpd"
 
 		}
 	}
