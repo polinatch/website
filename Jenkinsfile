@@ -14,13 +14,14 @@ pipeline {
 	stage('Test') {
                 steps {
                         echo "Test"
-                	try {
+                	script {
+    			try {
 			    // Fails with non-zero exit if dir1 does not exist
     				def out = sh(script:'curl localhost |grep Hello', returnStdout:true).trim()
 			} catch (Exception ex) {
     			println("Error in output")
 }
-}
+}}
         }
      }
 }
